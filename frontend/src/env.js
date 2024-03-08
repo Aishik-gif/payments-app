@@ -1,1 +1,1 @@
-export const API_URL="https://payments-app-kkw0.onrender.com"
+export const API_URL="https://payme-api-server.vercel.app"
