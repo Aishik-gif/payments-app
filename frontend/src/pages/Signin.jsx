@@ -7,6 +7,7 @@ import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import { usernameAtom, passwordAtom } from "../store/atoms/sign";
 import axios from "axios";
+import { API_URL } from "../env";
 
 export const Signin = () => {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ export const Signin = () => {
                         label={"Sign in"}
                         onClick={async () => {
                             const response = await axios.post(
-                                "http://localhost:3000/api/v1/user/signin",
+                                API_URL+"/api/v1/user/signin",
                                 {
                                     username,
                                     password,

@@ -4,6 +4,7 @@ import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "../env";
 
 export const SendMoney = () => {
     const [searchParams] = useSearchParams();
@@ -39,7 +40,7 @@ export const SendMoney = () => {
                     <button
                         className="justify-center rounded-md text-sm font-medium ring-offset-background transition ease-in-out delay-50 hover:scale-105 h-10 px-4 py-2 w-full bg-green-500 text-white"
                         onClick={async () => {
-                            await axios.post("http://localhost:3000/api/v1/account/transfer", 
+                            await axios.post(API_URL+"/api/v1/account/transfer", 
                             {
                                 amount,
                                 to: id,

@@ -3,6 +3,8 @@ const Appbar = React.lazy(() => import("../components/Appbar").then(module => ({
 const Balance = React.lazy(() => import("../components/Balance").then(module => ({default: module.Balance})));
 const Users = React.lazy(() => import("../components/Users").then(module => ({default: module.Users})));
 import axios from "axios";
+import { API_URL } from "../env";
+
 
 
 export const Dashboard = () => {
@@ -11,7 +13,7 @@ export const Dashboard = () => {
     const [id, setId] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/account/balance", {
+        axios.get(API_URL+"/api/v1/account/balance", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }
@@ -21,7 +23,7 @@ export const Dashboard = () => {
     }, []);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/api/v1/user/me", {
+        axios.get(API_URL+"/api/v1/user/me", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

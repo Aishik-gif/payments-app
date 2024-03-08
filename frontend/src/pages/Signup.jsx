@@ -6,6 +6,7 @@ import { SubHeading } from "../components/SubHeading";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { API_URL } from "../env";
 
 export const Signup = () => {
     const [firstName, setFirstName] = useState("");
@@ -64,7 +65,7 @@ export const Signup = () => {
                         label={"Sign up"}
                         onClick={async () => {
                             const response = await axios.post(
-                                "http://localhost:3000/api/v1/user/signup",
+                                API_URL+"/api/v1/user/signup",
                                 {
                                     firstName,
                                     lastName,
