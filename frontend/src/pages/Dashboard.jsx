@@ -1,7 +1,11 @@
 import React, { Suspense, useEffect, useState } from "react";
-const Appbar = React.lazy(() => import("../components/Appbar").then(module => ({default: module.Appbar})));
-const Balance = React.lazy(() => import("../components/Balance").then(module => ({default: module.Balance})));
-const Users = React.lazy(() => import("../components/Users").then(module => ({default: module.Users})));
+// const Appbar = React.lazy(() => import("../components/Appbar").then(module => ({default: module.Appbar})));
+// const Balance = React.lazy(() => import("../components/Balance").then(module => ({default: module.Balance})));
+// const Users = React.lazy(() => import("../components/Users").then(module => ({default: module.Users})));
+import { Appbar } from "../components/Appbar"
+import { Balance } from "../components/Balance"
+import { Users } from "../components/Users"
+
 import axios from "axios";
 import { API_URL } from "../env";
 
